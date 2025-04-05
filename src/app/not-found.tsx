@@ -1,20 +1,6 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 export default function NotFound() {
-  useEffect(() => {
-    // Ensure we're on the client side
-    if (typeof window !== 'undefined') {
-      // Handle any client-side navigation errors
-      window.onerror = (message, source, lineno, colno, error) => {
-        console.error('Error:', message);
-        return true;
-      };
-    }
-  }, []);
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="text-center">
