@@ -5,7 +5,6 @@ const nextConfig = {
     optimizeCss: true, // Optimize CSS
     serverActions: true,
   },
-  transpilePackages: [], // Add any packages that need transpilation
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -17,11 +16,6 @@ const nextConfig = {
   // Skip the not-found page during build
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   // Disable static optimization for not-found
-  experimental: {
-    optimizeCss: true,
-    serverActions: true,
-  },
-  // Skip the not-found page during build
   skipMiddlewareUrlNormalize: true,
   skipTrailingSlashRedirect: true,
   // Custom error handling
