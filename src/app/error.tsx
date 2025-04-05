@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Error({
   error,
@@ -9,19 +9,21 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const router = useRouter();
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Oops!</h1>
-        <p className="mt-2 text-lg text-gray-600">Something went wrong</p>
+        <h1 className="text-4xl font-bold text-gray-900">Something went wrong!</h1>
+        <p className="mt-2 text-lg text-gray-600">We're working on fixing this issue.</p>
         <div className="mt-6">
           <button
-            onClick={() => router.push('/')}
+            onClick={() => reset()}
             className="text-blue-600 hover:text-blue-500"
           >
-            Go back home
+            Try again
           </button>
         </div>
       </div>
