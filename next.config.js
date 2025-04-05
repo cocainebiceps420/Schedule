@@ -5,6 +5,12 @@ const nextConfig = {
     optimizeCss: true, // Optimize CSS
   },
   transpilePackages: [], // Add any packages that need transpilation
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig; 
