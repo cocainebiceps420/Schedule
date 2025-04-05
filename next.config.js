@@ -20,10 +20,12 @@ const nextConfig = {
   // Disable static optimization for not-found
   skipMiddlewareUrlNormalize: true,
   skipTrailingSlashRedirect: true,
-  // Disable static generation for not-found page
-  generateStaticParams: () => {
+  // Disable static page generation for error routes
+  generateStaticParams: async () => {
     return {
+      '/_error': false,
       '/_not-found': false,
+      '/404': false,
     };
   },
 };
