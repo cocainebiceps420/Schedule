@@ -20,12 +20,11 @@ const nextConfig = {
   // Disable static optimization for not-found
   skipMiddlewareUrlNormalize: true,
   skipTrailingSlashRedirect: true,
-  // Disable static optimization for not-found page
-  experimental: {
-    optimizeCss: true,
-    serverActions: {
-      allowedOrigins: ['localhost:3000', 'schedule-cocainebiceps420.vercel.app'],
-    },
+  // Disable static generation for not-found page
+  generateStaticParams: () => {
+    return {
+      '/_not-found': false,
+    };
   },
 };
 
