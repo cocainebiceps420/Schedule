@@ -3,7 +3,9 @@ const nextConfig = {
   reactStrictMode: false, // Disable strict mode for faster development
   experimental: {
     optimizeCss: true, // Optimize CSS
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ['localhost:3000', 'schedule-cocainebiceps420.vercel.app'],
+    },
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -18,15 +20,6 @@ const nextConfig = {
   // Disable static optimization for not-found
   skipMiddlewareUrlNormalize: true,
   skipTrailingSlashRedirect: true,
-  // Custom error handling
-  async rewrites() {
-    return [
-      {
-        source: '/_not-found',
-        destination: '/404',
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig; 
